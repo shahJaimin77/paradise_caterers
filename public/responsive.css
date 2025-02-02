@@ -1,0 +1,181 @@
+@media (max-width: 1440px) {
+    .contactUsComponent {
+        gap: 140px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .contactUsComponent {
+        gap: 20px;
+    }
+
+    footer .contactUsBg {
+        padding-inline: 40px;
+    }
+
+    .contactDetailsMargin {
+        gap: 60px 25px;
+    }
+
+    .contactUsComponentL a,
+    .contactUsComponentL p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .heroSection:after {
+        width: 75%;
+    }
+
+    .hero-content p {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 991px) {
+    .contactUsComponent {
+        grid-template-columns: 1fr;
+    }
+
+    .footerDesc p {
+        max-width: 85%;
+    }
+
+    .hero-content img {
+        width: 350px;
+    }
+
+    .hero-content p {
+        padding: 40px 0 0;
+    }
+
+    .aboutUsNaub {
+        gap: 30px;
+    }
+
+    .paraGroup {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+
+    footer .contactUsBg {
+        padding: 50px 40px;
+    }
+
+    .contactDetailsMargin {
+        margin: 40px 0 30px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        .col-span-2 {
+            grid-column: unset;
+        }
+    }
+
+    .contactUsComponentL h4 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .mainFooter {
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    .footerQuickLinks {
+        justify-content: start;
+        border-bottom: 1px solid #fff;
+        border-right: 0;
+        padding-bottom: 40px;
+    }
+
+    .footerLogo {
+        justify-content: start;
+        padding: 30px 0 20px;
+    }
+
+    .mainFooterParent {
+        padding: 0;
+    }
+
+    .footerDesc p {
+        max-width: 100%;
+    }
+
+    .heroSection:after {
+        width: 109%;
+        height: 89%;
+        background: linear-gradient(179deg, #831b37 70.47%, #6d122500 100%);
+    }
+
+    .hero-content {
+        left: 34px;
+        top: 113px;
+        bottom: unset;
+    }
+
+    .hero-content img {
+        width: 249px;
+    }
+
+    .hero-content p {
+        max-width: 79%;
+        font-family: Gilroy-Light;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.4px;
+    }
+
+    .heroImage {
+        height: 464px;
+    }
+
+    .websiteNavbar {
+        padding: 34px;
+    }
+
+    .websiteNavbar .button {
+        display: none;
+    }
+
+    .heroOverlay {
+        height: 229px;
+    }
+
+    .aboutUsNaub {
+        gap: 0;
+        padding: 60px 30px 30px;
+        grid-template-columns: 1fr;
+        position: relative;
+    }
+
+    .aboutUsNaub .aboutUsNaubR img {
+        height: 299px;
+        object-fit: contain;
+        width: 100%;
+    }
+
+    .title {
+        font-family: 'Cormorant Garamond';
+        font-size: 50px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 60.55px;
+    }
+
+    .aboutUsNaubR {
+        position: absolute;
+        top: 130px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 100%;
+    }
+
+    .paraGroup {
+        margin-top: 330px;
+    }
+}

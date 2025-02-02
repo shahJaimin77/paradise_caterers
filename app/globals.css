@@ -1,42 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
+@import '../public/reset.css';
+
+
+@font-face {
+  font-family: Gilroy-Light;
+  src: url('../public/font/Gilroy-Light.ttf');
+}
+
+@font-face {
+  font-family: Gilroy-Bold;
+  src: url('../public/font/Gilroy-Bold.ttf');
+}
+
+@font-face {
+  font-family: Gilroy-Heavy;
+  src: url('../public/font/Gilroy-Heavy.ttf');
+}
+
+@font-face {
+  font-family: Gilroy-Medium;
+  src: url('../public/font/Gilroy-Medium.ttf');
+}
+
+@font-face {
+  font-family: Gilroy-Regular;
+  src: url('../public/font/Gilroy-Regular.ttf');
+}
+
+@font-face {
+  font-family: Gilroy-Semibold;
+  src: url('../public/font/Gilroy-SemiBold.ttf');
+}
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-clr: #831B37;
+  --golden-clr: #DDB53C;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.button {
+  font-family: Gilroy-Medium;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  text-align: center;
+  padding: 10px 28px;
+  border-radius: 4px;
+  outline: none;
+  transition: .4s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.button.btn-golden {
+  color: var(--golden-clr);
+  border: 1px solid var(--golden-clr);
+  padding: 10px 20px;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.button.btn-golden:hover {
+  background: var(--golden-clr);
+  color: #fff;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.button.btn-maroon:hover,
+.button:hover {
+  background: var(--primary-clr);
+  border: 1px solid var(--primary-clr);
+  color: #fff;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.button.btn-maroon {
+  border: 1px solid var(--primary-clr);
+  color: var(--primary-clr);
+  background: transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.b-white {
+  color: #fff;
+  border: 1px solid #ffff;
 }
+
+.b-black {
+  color: #000;
+  border: 1px solid #000f;
+}
+
+.websiteNavbar {
+  padding: 30px 70px;
+}
+
+.websiteNavbar ul li a {
+  font-family: Gilroy-Regular;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+footer .contactUsBg {
+  background: #651127;
+  padding: 80px 131px 103px 107px;
+}
+
+.placeHolder {
+  max-width: 548px;
+  width: 100%;
+  height: 100%;
+  max-height: 496px;
+  border-radius: 20px;
+  background: #D9D9D9;
+}
+
+.contactUsComponentL h4 {
+  font-family: "Cormorant Garamond";
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 96.88px;
+  color: #2C2B2B;
+}
+
+.contactUsBg .contactUsComponentL a,
+.contactUsBg .contactUsComponentL p,
+.contactUsBg .contactUsComponentL span,
+.contactUsBg .contactUsComponentL h4 {
+  color: #fff;
+}
+
+.contactUsComponentL span {
+  font-family: Gilroy-Light;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  letter-spacing: 0.14em;
+  color: #2C2B2B;
+  display: block;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.contactUsComponentL a,
+.contactUsComponentL p {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  color: #2C2B2B;
+}
+
+.contactDetailsMargin {
+  margin: 100px 0 64px;
+}
+
+.contactUsComponentL p {
+  margin-bottom: 10px;
+}
+
+.flexFull {
+  width: 100%;
+}
+
+.mainFooterParent {
+  padding: 45px 0 60px;
+}
+
+.footerDesc p {
+  font-family: Gilroy-Light;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  text-align: justify;
+  color: #Fff;
+  margin-bottom: 28px;
+  max-width: 65%;
+}
+
+.footerQuickLinks a {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  /* margin-bottom: 20px;
+  display: inline-block; */
+}
+
+.footerQuickLinks {
+  border-right: 1px solid #fff;
+}
+
+/* Home Banner Css */
+.heroSection {
+  overflow: hidden;
+}
+
+.heroSection::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 58%;
+  height: 100%;
+  background: linear-gradient(90deg, #831B37 70.47%, rgba(109, 18, 37, 0) 100%);
+  z-index: 2;
+}
+
+.heroImage {
+  margin-left: auto;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: min-content;
+  left: 70px;
+  margin: auto;
+  z-index: 3;
+}
+
+.hero-content p {
+  font-family: Gilroy-Light;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: justify;
+  max-width: 35%;
+  color: #fff;
+  padding: 60px 0 0 44px;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  margin: auto;
+}
+
+/* Home Banner Css */
+
+
+/* About Us Css */
+
+.aboutUsNaub {
+  align-items: center;
+  padding: 60px;
+}
+
+.title {
+  font-family: 'Cormorant Garamond';
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 96.88px;
+  color: #651127;
+}
+
+.paraGroup {
+  margin-top: 40px;
+  max-width: 90%;
+}
+
+.paraGroup p {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  text-align: justify;
+  color: #282828;
+  margin-bottom: 20px;
+}
+
+.inageGrid .button {
+  margin: 30px auto 0;
+}
+
+/* About Us Css */
