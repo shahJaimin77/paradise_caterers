@@ -1,17 +1,19 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
-
-export default function Navbar() {
+const Navbar = ({ fixed }) => {
+    // const router = useRouter()
+    const router = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
     return (
-        <nav className="websiteNavbar bg-transparent fixed w-full z-20 top-0 start-0">
+        <nav className={`websiteNavbar bg-transparent ${fixed === true && 'fixed'} w-full z-20 top-0 start-0`}>
             <div className="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="https://flowbite.com/" className="">
                     <Image src={'/images/logo.svg'} alt='Logo' className='img' width={29} height={40} />
@@ -48,33 +50,34 @@ export default function Navbar() {
                 >
                     <ul className="flex flex-col gap-[40px] p-4 md:p-0 mt-4 font-medium border md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
                         <li>
-                            <a
-                                href="#"
-                                className="text-black"
-                                aria-current="page"
+                            <Link
+                                href="/"
+                                className={`${router.pathname === '/' ? 'active' : ''}`}
                             >
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="#"
-                                className="text-black"
+                            <Link
+                                href="/venue"
+                                className={`${router.pathname === '/venue' ? 'active' : ''}`}
                             >
                                 Venue
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="#"
-                                className="text-black"
+                            <Link
+                                href="/gallery"
+                                className={`${router.pathname === '/gallery' ? 'active' : ''}`}
                             >
                                 Gallery
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    );
+    )
 }
+
+export default Navbar

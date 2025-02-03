@@ -90,11 +90,16 @@
   padding: 30px 70px;
 }
 
+.websiteNavbar.fixed ul li a {
+  color: #fff;
+}
+
 .websiteNavbar ul li a {
   font-family: Gilroy-Regular;
   font-size: 14px;
   font-weight: 400;
   line-height: 16.8px;
+  color: #000;
 }
 
 footer .contactUsBg {
@@ -350,3 +355,168 @@ footer .contactUsBg {
 }
 
 /* Testimonials Css */
+
+/* Banner Css */
+.pageBannerPadding {
+  padding: 0 60px 0;
+}
+
+.pageBanner .pageBannerInfo {
+  position: absolute;
+  left: 65px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: fit-content;
+  z-index: 3;
+}
+
+.pageBanner .pageBannerInfo h2 {
+  font-family: 'Cormorant Garamond';
+  font-size: 80px;
+  font-weight: 400;
+  color: #Fff;
+  line-height: 96.88px;
+  margin-bottom: 8px;
+}
+
+.pageBanner .pageBannerInfo p {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: justify;
+  color: #fff;
+  max-width: 40%;
+}
+
+.pageBanner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, #831B37 0%, rgba(109, 18, 37, 0) 100%);
+  z-index: 2;
+  border-radius: 20px;
+}
+
+/* Banner Css */
+
+/* Venue Grid */
+.vanueGridMain {
+  display: grid;
+  grid-template-columns: 1fr 357px;
+  gap: 26px;
+  margin: 30px 0;
+  padding-inline: calc(116px - 60px);
+
+  img {
+    border-radius: 10px;
+  }
+}
+
+.gridVenueInn {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 26px;
+
+  img {
+    height: 220px;
+    object-fit: cover;
+  }
+}
+
+.gridVenueInn.gridVenueInnMar {
+  grid-template-columns: 2fr 1fr;
+}
+
+.gridVenueInnMar {
+  margin-bottom: 26px;
+}
+
+/* Venue Grid */
+
+/* Address Css */
+.addtessWithForm {
+  padding: 46px 123px 100px;
+  background: #F8F8F8;
+}
+
+.addtessWithForm::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  inset: 0;
+  margin: auto;
+  background: #CDCDCD;
+  z-index: 2;
+}
+
+.address:last-child {
+  margin-top: 54px;
+}
+
+.address h4 {
+  font-family: Gilroy-SemiBold;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36.75px;
+  letter-spacing: 0.11em;
+  color: #000000;
+}
+
+.address p {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  color: #000000;
+  margin: 10px 0 18px;
+}
+
+/* Address Css */
+
+/* Form Css */
+
+.error {
+  color: red;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Gilroy-SemiBold;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+form {
+  display: grid;
+  gap: 20px;
+}
+
+form textarea,
+form input {
+  background: #FFFFFF;
+  border-radius: 6px;
+  outline: none;
+  padding: 10px 14px;
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  color: #A4A4A4;
+  width: 100%;
+}
+
+form textarea {
+  height: 104px;
+  resize: none;
+}
+
+.addtessWithFormParent.grid.grid-cols-2.relative {
+  gap: 230px;
+  padding: calc(98px - 46px) 0;
+}
+
+/* Form Css */

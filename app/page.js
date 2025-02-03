@@ -7,9 +7,9 @@ import Testimonials from "./component/Testimonials";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar fixed={true} />
       <div className="heroSection relative">
-        <Image src={'/images/hero.png'} alt="Hero Image" width={1120} height={868} className="img heroImage" />
+        <Image src={'/images/hero.webp'} alt="Hero Image" width={1120} height={868} className="img heroImage" />
         <Image src={'/images/overlay.png'} alt="Hero Image" width={250} height={450} className="img heroOverlay" />
         <div className="hero-content">
           <Image src={'/images/paradise-text.svg'} alt="paradise text Image" width={500} height={112} className="img" />
@@ -28,19 +28,19 @@ export default function Home() {
           </div>
         </div>
         <div className="aboutUsNaubR">
-          <Image src={'/images/about.png'} alt="About Image" width={603} height={589} className="img" />
+          <Image src={'/images/about.webp'} alt="About Image" width={603} height={589} className="img" />
         </div>
         <div className="inageGrid col-span-2">
           <picture>
-            <source srcSet={'/images/grid-m.png'} media="(max-width: 768px)" />
-            <Image src={'/images/grid.png'} alt="Inage Image" width={1302} height={447} className="img w-full" />
+            <source srcSet={'/images/grid-m.webp'} media="(max-width: 768px)" />
+            <Image src={'/images/grid.webp'} alt="Inage Image" width={1302} height={447} className="img w-full" />
           </picture>
           <div className="text-center">
             <Link href={'/gallery'} className="button btn-maroon">View Gallery</Link>
           </div>
         </div>
       </div>
-      <Testimonials/>
+      <Testimonials />
       <Footer />
     </>
   );

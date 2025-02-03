@@ -57,9 +57,73 @@
     .paraGroup {
         max-width: 100%;
     }
+
+    .gridVenueInn,
+    .vanueGridMain {
+        gap: 10px;
+    }
+
+    .gridVenueInnMar {
+        margin-bottom: 10px;
+    }
+
+    .vanueGridMain {
+        grid-template-columns: 1fr 170px;
+    }
+
+    .addtessWithFormParent.grid.grid-cols-2.relative {
+        gap: 80px;
+    }
 }
 
 @media (max-width: 767px) {
+
+    .vanueGridMain {
+        grid-template-columns: 1fr;
+        margin: 16px 0 30px;
+    }
+
+    .addtessWithFormParent.grid.grid-cols-2.relative {
+        grid-template-columns: 1fr;
+    }
+
+    .addtessWithForm:after {
+        width: 80%;
+        height: 1px;
+    }
+
+    .addtessWithForm {
+        padding: 55px 40px 100px;
+    }
+
+    .addtessWithFormParent.grid.grid-cols-2.relative {
+        padding: 0;
+    }
+
+    .address:last-child {
+        margin-top: 40px;
+    }
+
+    .vanueGridMain {
+        padding-inline: 15px;
+    }
+
+    .gridVenueInn,
+    .vanueGridMain {
+        gap: 7px;
+    }
+
+    .gridVenueInnMar {
+        margin-bottom: 7px;
+    }
+
+    .aboutUsNau img.h-full {
+        height: 132px;
+    }
+
+    .pageBannerPadding .gridVenueInn img {
+        height: 80px;
+    }
 
     footer .contactUsBg {
         padding: 50px 40px;
@@ -177,5 +241,84 @@
 
     .paraGroup {
         margin-top: 330px;
+    }
+
+    .testimonialMain .swiper-slide .sliderInner {
+        max-width: 100%;
+    }
+
+    .testimonialMain .swiper-slide img {
+        display: none;
+    }
+
+    .testimonialMain {
+        padding: 30px;
+    }
+
+    .testimonialMain .swiper-slide p {
+        line-height: 19.41px;
+        font-size: 16px;
+        margin: 40px 0 170px;
+    }
+
+    .testimonialMain .swiper-slide {
+        margin: 0;
+        padding-bottom: 50px;
+    }
+
+    .testimonialMain .swiper-slide h2 {
+        font-size: 20px;
+        line-height: 24.5px;
+        letter-spacing: 0.11em;
+    }
+
+    .testimonialMain .swiper-slide span {
+        font-size: 14px;
+        line-height: 16.8px;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0;
+    }
+
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        font-size: 20px;
+    }
+
+    .testimonialMain .swiper-button-prev,
+    .testimonialMain .swiper-button-next {
+        bottom: 67px;
+    }
+
+    .pageBannerPadding {
+        padding: 0 30px 0;
+    }
+
+    .pageBannerPadding img {
+        height: 195px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .pageBanner .pageBannerInfo {
+        padding: 0 20px;
+        left: 0;
+    }
+
+    .pageBanner .pageBannerInfo h2 {
+        font-size: 40px;
+        line-height: 48.44px;
+    }
+
+    .pageBanner .pageBannerInfo p {
+        max-width: 100%;
+        font-size: 12px;
+        line-height: 14.4px;
+    }
+
+    .pageBanner:after {
+        width: 100%;
     }
 }
