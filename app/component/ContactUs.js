@@ -40,7 +40,7 @@ const ContactUs = () => {
                 </div>
             </div>
             <div className="contactUsComponentR">
-                <div className="placeHolder"></div>
+                <Image src={'/images/place.png'} alt='Icon' className='img placeHolder' width={548} height={496} />
             </div>
         </div>
     )

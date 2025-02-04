@@ -2,11 +2,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 const Navbar = ({ fixed }) => {
-    // const router = useRouter()
-    const router = usePathname();
+    const router = usePathname()
+    console.log(router, 'router')
+    // const router = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -15,15 +16,15 @@ const Navbar = ({ fixed }) => {
     return (
         <nav className={`websiteNavbar bg-transparent ${fixed === true && 'fixed'} w-full z-20 top-0 start-0`}>
             <div className="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="https://flowbite.com/" className="">
+                <Link href="/" className="">
                     <Image src={'/images/logo.svg'} alt='Logo' className='img' width={29} height={40} />
-                </a>
+                </Link>
                 <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <Link
-                        href={'/'}
+                        href={'/contact'}
                         className="button b-transparent b-black"
                     >
-                        Get started
+                        Contact Us
                     </Link>
                     <button
                         onClick={toggleMenu}
@@ -45,14 +46,14 @@ const Navbar = ({ fixed }) => {
                     </button>
                 </div>
                 <div
-                    className={`items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'}`}
+                    className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'}`}
                     id="navbar-sticky"
                 >
-                    <ul className="flex flex-col gap-[40px] p-4 md:p-0 mt-4 font-medium border md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+                    <ul className="navOnMob flex flex-col gap-[40px] p-4 md:p-0 mt-4 font-medium border md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
                         <li>
                             <Link
                                 href="/"
-                                className={`${router.pathname === '/' ? 'active' : ''}`}
+                                className={`${router === '/' ? 'homeactive' : ''}`}
                             >
                                 Home
                             </Link>
@@ -60,7 +61,7 @@ const Navbar = ({ fixed }) => {
                         <li>
                             <Link
                                 href="/venue"
-                                className={`${router.pathname === '/venue' ? 'active' : ''}`}
+                                className={`${router === '/venue' ? 'active' : ''}`}
                             >
                                 Venue
                             </Link>
@@ -68,7 +69,7 @@ const Navbar = ({ fixed }) => {
                         <li>
                             <Link
                                 href="/gallery"
-                                className={`${router.pathname === '/gallery' ? 'active' : ''}`}
+                                className={`${router === '/gallery' ? 'active' : ''}`}
                             >
                                 Gallery
                             </Link>

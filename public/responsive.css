@@ -31,6 +31,10 @@
     .hero-content p {
         max-width: 50%;
     }
+
+    .contactUsPage {
+        padding: 40px 20px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -277,13 +281,13 @@
         line-height: 16.8px;
     }
 
-    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    .testimonialMain .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .testimonialMain .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 0;
     }
 
-    .swiper-button-prev:after,
-    .swiper-button-next:after {
+    .testimonialMain .swiper-button-prev:after,
+    .testimonialMain .swiper-button-next:after {
         font-size: 20px;
     }
 
@@ -320,5 +324,62 @@
 
     .pageBanner:after {
         width: 100%;
+    }
+
+    div#navbar-sticky {
+        background: #fff;
+        border-radius: 8px;
+        margin-top: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        position: absolute;
+        top: 90px;
+        width: 90%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 20;
+    }
+
+    .websiteNavbar.fixed ul li a,
+    .websiteNavbar ul li a {
+        color: #000000;
+        padding: 10px 20px;
+        display: inline-block;
+    }
+
+    .navOnMob {
+        gap: 0;
+    }
+
+    .websiteNavbar button:focus,
+    .websiteNavbar button {
+        outline: none;
+        border: none;
+    }
+
+    .galleryTabs ul li button img {
+        height: 24px;
+    }
+
+    .galleryTabs .gallery-tab-content {
+        padding: 30px 0 70px;
+    }
+
+    .galleryTabs .swiper-button-prev,
+    .galleryTabs .swiper-button-next {
+        display: none;
+    }
+
+    .contactUsPage {
+        padding: 40px 0;
+    }
+
+    .contactUsPage .contactUsComponentL a img {
+        height: 24px;
+    }
+
+    .placeHolder {
+        width: 100%;
+        height: 205px;
     }
 }

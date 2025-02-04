@@ -16,9 +16,9 @@ const Footer = () => {
                             <ul className='grid grid-cols-2 gap-y-5 gap-6 content-start'>
                                 <li><Link href="/" className='text-white'>Home</Link></li>
                                 <li><Link href="/" className='text-white'>About Us</Link></li>
-                                <li><Link href="/" className='text-white'>Contact Us</Link></li>
-                                <li><Link href="/" className='text-white'>Gallery</Link></li>
-                                <li><Link href="/" className='text-white'>Venue</Link></li>
+                                <li><Link href="/contact" className='text-white'>Contact Us</Link></li>
+                                <li><Link href="/gallery" className='text-white'>Gallery</Link></li>
+                                <li><Link href="/venue" className='text-white'>Venue</Link></li>
                             </ul>
                         </div>
                         <div className="flexFull footerLogo flex justify-center">

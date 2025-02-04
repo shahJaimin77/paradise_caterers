@@ -102,16 +102,31 @@
   color: #000;
 }
 
+.websiteNavbar ul li a.active {
+  color: #831B37;
+  font-family: Gilroy-SemiBold;
+}
+
+.websiteNavbar ul li a.homeactive {
+  font-family: Gilroy-SemiBold;
+  color: #DDB53C;
+}
+
+.websiteNavbar.fixed .button {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
 footer .contactUsBg {
   background: #651127;
   padding: 80px 131px 103px 107px;
 }
 
 .placeHolder {
-  max-width: 548px;
-  width: 100%;
-  height: 100%;
-  max-height: 496px;
+  /* max-width: 548px;
+  max-height: 496px; */
+  width: 548px;
+  height: 496px;
   border-radius: 20px;
   background: #D9D9D9;
 }
@@ -361,6 +376,11 @@ footer .contactUsBg {
   padding: 0 60px 0;
 }
 
+.pageBanner img {
+  height: 478px;
+  object-fit: cover;
+}
+
 .pageBanner .pageBannerInfo {
   position: absolute;
   left: 65px;
@@ -520,3 +540,111 @@ form textarea {
 }
 
 /* Form Css */
+
+/* Gallery Tabs Css */
+.galleryPage {
+  padding: 40px 0 56px;
+}
+
+.galleryTabs ul {
+  width: fit-content;
+  margin: auto;
+  background: #ededed;
+  border-radius: 10px;
+}
+
+.galleryTabs ul li button {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  color: #282828;
+  outline: none;
+  cursor: pointer;
+  padding: 11px 25px;
+  background: transparent;
+  transition: .5s all;
+  border-radius: 10px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.galleryTabs ul li button.active {
+  background: var(--primary-clr);
+  color: #fff;
+}
+
+.galleryTabs ul li button img {
+  filter: brightness(1) invert(0);
+}
+
+.galleryTabs ul li button.active img {
+  filter: brightness(1) invert(1);
+  transition: .5s all;
+}
+
+.galleryTabs .gallery-tab-content {
+  position: relative;
+  padding: 40px calc(147px - 60px) 56px;
+}
+
+.galleryTabs .swiper.swiper-initialized {
+  /* padding: 0 calc(147px - 60px) 0; */
+  position: unset;
+}
+
+.galleryTabs .swiper-pagination span {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  padding: 12px 7px;
+  border-radius: 6px;
+  background: transparent;
+  color: #2C2B2B;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 36px;
+}
+
+.galleryTabs .swiper-pagination span.swiper-pagination-bullet-active {
+  color: #831B37;
+  background: #EDEDED;
+}
+
+/* .galleryTabs .swiper-wrapper {
+  overflow: hidden;
+} */
+
+.galleryTabs .swiper-button-prev:after,
+.galleryTabs .swiper-button-next:after {
+  color: var(--primary-clr);
+}
+
+/* Gallery Tabs Css */
+
+/* Contact Us */
+.contactUsPage {
+  padding: 40px calc(130px - 60px);
+}
+
+.contactUsPage .contactUsComponent {
+  align-items: center;
+}
+
+.contactUsPage .contactDetailsMargin {
+  margin-top: 0;
+}
+
+.contactUsPage .contactUsComponentL h4 {
+  display: none;
+}
+
+.contactUsPage .contactUsComponentL a img {
+  filter: brightness(1) invert(1);
+}
+
+/* Contact Us */
