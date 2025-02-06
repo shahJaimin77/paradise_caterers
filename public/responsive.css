@@ -94,10 +94,11 @@
     .addtessWithForm:after {
         width: 80%;
         height: 1px;
+        bottom: 27px;
     }
 
     .addtessWithForm {
-        padding: 55px 40px 100px;
+        padding: 55px 43px 100px;
     }
 
     .addtessWithFormParent.grid.grid-cols-2.relative {
@@ -106,6 +107,10 @@
 
     .address:last-child {
         margin-top: 40px;
+    }
+
+    .galleryPage {
+        padding: 30px 0 46px;
     }
 
     .vanueGridMain {
@@ -150,7 +155,7 @@
 
     .mainFooter {
         flex-direction: column;
-        padding: 40px;
+        padding: 48px 40px 70px;
     }
 
     .footerQuickLinks {
@@ -175,13 +180,13 @@
 
     .heroSection:after {
         width: 109%;
-        height: 89%;
+        height: 513px;
         background: linear-gradient(179deg, #831b37 70.47%, #6d122500 100%);
     }
 
     .hero-content {
         left: 34px;
-        top: 113px;
+        top: 159px;
         bottom: unset;
     }
 
@@ -199,10 +204,12 @@
 
     .heroImage {
         height: 464px;
+        margin-top: 300px;
+        object-fit: cover;
     }
 
     .websiteNavbar {
-        padding: 34px;
+        padding: 70px 34px 0;
     }
 
     .websiteNavbar .button {
@@ -215,7 +222,7 @@
 
     .aboutUsNaub {
         gap: 0;
-        padding: 60px 30px 30px;
+        padding: 60px 30px 47px;
         grid-template-columns: 1fr;
         position: relative;
     }
@@ -236,7 +243,7 @@
 
     .aboutUsNaubR {
         position: absolute;
-        top: 130px;
+        top: 135px;
         left: 0;
         right: 0;
         margin: auto;
@@ -244,11 +251,15 @@
     }
 
     .paraGroup {
-        margin-top: 330px;
+        margin-top: 340px;
     }
 
     .testimonialMain .swiper-slide .sliderInner {
         max-width: 100%;
+    }
+
+    .paraGroup p:nth-child(3) {
+        margin-bottom: 30px;
     }
 
     .testimonialMain .swiper-slide img {
@@ -256,18 +267,19 @@
     }
 
     .testimonialMain {
-        padding: 30px;
+        padding: 50px 54px 40px;
     }
 
     .testimonialMain .swiper-slide p {
         line-height: 19.41px;
         font-size: 16px;
-        margin: 40px 0 170px;
+        margin: 40px 0 177px;
     }
 
     .testimonialMain .swiper-slide {
         margin: 0;
         padding-bottom: 50px;
+        padding-bottom: 72px;
     }
 
     .testimonialMain .swiper-slide h2 {
@@ -293,21 +305,21 @@
 
     .testimonialMain .swiper-button-prev,
     .testimonialMain .swiper-button-next {
-        bottom: 67px;
+        bottom: 87px;
     }
 
     .pageBannerPadding {
-        padding: 0 30px 0;
+        padding: 50px 30px 0;
     }
 
     .pageBannerPadding img {
         height: 195px;
         object-fit: cover;
-        border-radius: 20px;
+        border-radius: 10px;
     }
 
     .pageBanner .pageBannerInfo {
-        padding: 0 20px;
+        padding: 0 23px;
         left: 0;
     }
 
@@ -332,7 +344,7 @@
         margin-top: 10px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         position: absolute;
-        top: 90px;
+        top: 122px;
         width: 90%;
         left: 0;
         right: 0;
@@ -381,5 +393,10 @@
     .placeHolder {
         width: 100%;
         height: 205px;
+        margin-top: 20px;
+    }
+
+    .socialIcon {
+        margin-top: 3px;
     }
 }
