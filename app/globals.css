@@ -167,6 +167,10 @@ footer .contactUsBg {
   color: #2C2B2B;
 }
 
+.contactUsComponentR iframe {
+  border-radius: 20px;
+}
+
 .contactDetailsMargin {
   margin: 100px 0 64px;
 }
@@ -652,3 +656,36 @@ form textarea {
 }
 
 /* Contact Us */
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 294.79px 1fr 294.79px;
+  gap: 22px;
+
+  img {
+    object-fit: cover;
+    height: 447px;
+    border-radius: 16px;
+  }
+}
+
+.grid-container-inner {
+  display: grid;
+  grid-template-columns: 1fr 223.93px;
+  gap: 22px;
+  margin-bottom: 19px;
+
+  img {
+    height: 214px;
+  }
+}
+
+.grid-container-inner:nth-child(2) {
+  grid-template-columns: 223.93px 1fr;
+}
+
+.grid-container-mobile {
+  display: none;
+}

@@ -1,10 +1,13 @@
+'use client'
 import Image from "next/image";
 import Footer from "./component/Footer";
 import Navbar from "./component/Navbar";
 import Link from "next/link";
 import Testimonials from "./component/Testimonials";
+import ImageGrid from "./component/ImageGrid";
 
 export default function Home() {
+
   return (
     <>
       <Navbar fixed={true} />
@@ -31,10 +34,11 @@ export default function Home() {
           <Image src={'/images/about.webp'} alt="About Image" width={603} height={589} className="img" />
         </div>
         <div className="inageGrid col-span-2">
-          <picture>
+          {/* <picture>
             <source srcSet={'/images/grid-m.webp'} media="(max-width: 768px)" />
             <Image src={'/images/grid.webp'} alt="Inage Image" width={1302} height={447} className="img w-full" />
-          </picture>
+          </picture> */}
+          <ImageGrid />
           <div className="text-center">
             <Link href={'/gallery'} className="button btn-maroon">View Gallery</Link>
           </div>

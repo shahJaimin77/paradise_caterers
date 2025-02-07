@@ -7,6 +7,10 @@ import * as Yup from 'yup';
 const validationSchema = Yup.object({
     fullName: Yup.string()
         .required('Full Name is required')
+        .matches(
+            /^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/gi,
+            'Name can only contain letters.'
+        )
         .min(3, 'Full Name must be at least 3 characters'),
     phoneNo: Yup.string()
         .required('Phone Number is required')

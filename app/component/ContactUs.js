@@ -40,7 +40,8 @@ const ContactUs = () => {
                 </div>
             </div>
             <div className="contactUsComponentR">
-                <Image src={'/images/place.png'} alt='Icon' className='img placeHolder' width={548} height={496} />
+                {/* <Image src={'/images/place.png'} alt='Icon' className='img placeHolder' width={548} height={496} /> */}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.6341507054976!2d72.8633389!3d19.254769799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0e5431a1437%3A0x8fc5b305ca4fb5ef!2sVIDYA%20MANDIR%20BANQUET%20HALL%20-%20Paradise%20Caterers!5e0!3m2!1sen!2sin!4v1738951735619!5m2!1sen!2sin" width="548" height="496" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     )
