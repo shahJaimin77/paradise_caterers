@@ -1,38 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import 'react-image-lightbox/style.css'; // Import lightbox styles
-import Lightbox from 'react-image-lightbox';
+// import 'react-image-lightbox/style.css'; // Import lightbox styles
+// import Lightbox from 'react-image-lightbox';
 import Image from 'next/image';
 
 const ImageGrid = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [currentImage, setCurrentImage] = useState(null);
+    // const [isOpen, setIsOpen] = useState(false);
+    // const [currentImage, setCurrentImage] = useState(null);
 
-    const images = [
-        { src: '/images/1.png', alt: 'Cupcake' },
-        { src: '/images/3.png', alt: 'Banquet Hall' },
-        { src: '/images/4.png', alt: 'Candy' },
-        { src: '/images/5.png', alt: 'Dessert' },
-        { src: '/images/6.png', alt: 'Cake' },
-        { src: '/images/2.png', alt: 'Drinks' },
-    ];
+    // const images = [
+    //     { src: '/images/1.png', alt: 'Cupcake' },
+    //     { src: '/images/3.png', alt: 'Banquet Hall' },
+    //     { src: '/images/4.png', alt: 'Candy' },
+    //     { src: '/images/5.png', alt: 'Dessert' },
+    //     { src: '/images/6.png', alt: 'Cake' },
+    //     { src: '/images/2.png', alt: 'Drinks' },
+    // ];
 
-    const handleImageClick = (imageUrl) => {
-        setCurrentImage(imageUrl); // Set the current image to display in the lightbox
-        setIsOpen(true); // Open the lightbox
-    };
+    // const handleImageClick = (imageUrl) => {
+    //     setCurrentImage(imageUrl); // Set the current image to display in the lightbox
+    //     setIsOpen(true); // Open the lightbox
+    // };
 
-    useEffect(() => {
-        // When the lightbox is open, set aria-hidden="true" on <body>
-        if (isOpen) {
-            document.body.setAttribute('aria-hidden', 'true');
-        } else {
-            document.body.removeAttribute('aria-hidden'); // Remove the attribute when the lightbox is closed
-        }
+    // useEffect(() => {
+    //     // When the lightbox is open, set aria-hidden="true" on <body>
+    //     if (isOpen) {
+    //         document.body.setAttribute('aria-hidden', 'true');
+    //     } else {
+    //         document.body.removeAttribute('aria-hidden'); // Remove the attribute when the lightbox is closed
+    //     }
 
-        return () => {
-            document.body.removeAttribute('aria-hidden'); // Clean up when component unmounts or modal is closed
-        };
-    }, [isOpen]); // Runs whenever the `isOpen` state changes
+    //     return () => {
+    //         document.body.removeAttribute('aria-hidden'); // Clean up when component unmounts or modal is closed
+    //     };
+    // }, [isOpen]); // Runs whenever the `isOpen` state changes
 
     return (
         <>
