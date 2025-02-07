@@ -689,3 +689,10 @@ form textarea {
 .grid-container-mobile {
   display: none;
 }
+
+.__react_modal_image__header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
