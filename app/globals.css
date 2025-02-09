@@ -277,6 +277,7 @@ footer .contactUsBg {
   left: 0;
   z-index: 3;
   margin: auto;
+  object-fit: cover;
 }
 
 /* Home Banner Css */
@@ -287,6 +288,25 @@ footer .contactUsBg {
 .aboutUsNaub {
   align-items: center;
   padding: 60px;
+  position: relative;
+}
+
+.aboutUsNaub::before,
+.aboutUsNaub::after {
+  content: '';
+  position: absolute;
+  top: -70px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 1.25px;
+  height: 70px;
+  background: #fff;
+}
+
+.aboutUsNaub::after {
+  top: 0;
+  background: #282828;
 }
 
 .title {
@@ -592,6 +612,21 @@ form textarea {
   margin: auto;
   background: #ededed;
   border-radius: 10px;
+  position: relative;
+}
+
+.galleryTabs ul::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  /* height: calc(100% - 10px); */
+  height: 100%;
+  background: var(--primary-clr);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .galleryTabs ul li button {
@@ -604,27 +639,42 @@ form textarea {
   cursor: pointer;
   padding: 11px 25px;
   background: transparent;
-  transition: .05s all;
-  border-radius: 10px;
+  border: none;
   display: flex;
   gap: 6px;
   align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+  width: 100%;
+  justify-content: center;
 }
 
-.galleryTabs ul li button.active {
-  background: var(--primary-clr);
-  color: #fff;
+.galleryTabs ul li {
+  width: 50%;
   position: relative;
 }
 
-/* .galleryTabs ul li button.active::after {
-  content: "";
-  position: absolute;
-  width: 127px;
-  height: 46px;
+.galleryTabs ul li button.active {
+  color: #fff;
+}
+
+.galleryTabs ul li button.videoButton.active~li button.videoButton {
+  color: #fff;
+}
+
+.galleryTabs ul li button.videoButton.active {
+  color: #fff;
+}
+
+.galleryTabs ul:has(.videoButton.active)::before {
+  transform: translateX(100%);
+}
+
+/* .galleryTabs ul li button.active {
   background: var(--primary-clr);
-  border-radius: 10px;
-  transition: .5s all;
+  color: #fff;
+  position: relative;
 } */
 
 .galleryTabs ul li button img {
@@ -746,4 +796,16 @@ form textarea {
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+}
+
+#navbar-sticky.notactive {
+  opacity: 0;
+  height: 0;
+  transition: .5s all;
+}
+
+#navbar-sticky.active {
+  opacity: 1;
+  transition: .5s all;
+  height: 110px;
 }

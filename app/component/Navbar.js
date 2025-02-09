@@ -46,7 +46,7 @@ const Navbar = ({ fixed }) => {
                     </button>
                 </div>
                 <div
-                    className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'}`}
+                    className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? 'active' : 'notactive'}`}
                     id="navbar-sticky"
                 >
                     <ul className="navOnMob flex flex-col gap-[40px] p-4 md:p-0 mt-4 font-medium border md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">

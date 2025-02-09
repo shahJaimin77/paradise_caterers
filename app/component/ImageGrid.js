@@ -82,96 +82,96 @@ const ImageGrid = () => (
             alt="Hello World!"
         /> */}
             <ModalImage
-                small={'/images/1.png'}
-                large={'/images/1.png'}
+                small={'/images/1.webp'}
+                large={'/images/1.webp'}
                 alt="Image!" />
-            {/* <Image src="/images/1.png" className="img" alt="Cupcake" width={1000} height={1000} /> */}
+            {/* <Image src="/images/1.webp" className="img" alt="Cupcake" width={1000} height={1000} /> */}
             <div>
                 <div className="grid-container-inner">
                     <ModalImage
-                        small={'/images/3.png'}
-                        large={'/images/3.png'}
+                        small={'/images/3.webp'}
+                        large={'/images/3.webp'}
                         alt="Image!"
                         className='w-full'
                     />
                     <ModalImage
-                        small={'/images/4.png'}
-                        large={'/images/4.png'}
+                        small={'/images/4.webp'}
+                        large={'/images/4.webp'}
                         alt="Image!"
                     />
-                    {/* <Image src="/images/3.png" className="img" alt="Banquet Hall" width={1000} height={1000} />
-        <Image src="/images/4.png" className="img" alt="Candy" width={1000} height={1000} /> */}
+                    {/* <Image src="/images/3.webp" className="img" alt="Banquet Hall" width={1000} height={1000} />
+        <Image src="/images/4.webp" className="img" alt="Candy" width={1000} height={1000} /> */}
                 </div>
                 <div className="grid-container-inner">
                     <ModalImage
-                        small={'/images/5.png'}
-                        large={'/images/5.png'}
+                        small={'/images/5.webp'}
+                        large={'/images/5.webp'}
                         alt="Image!"
                     />
                     <ModalImage
-                        small={'/images/6.png'}
-                        large={'/images/6.png'}
+                        small={'/images/6.webp'}
+                        large={'/images/6.webp'}
                         alt="Image!"
                         className='w-full'
                     />
-                    {/* <Image src="/images/5.png" className="img" alt="Dessert" width={1000} height={1000} />
-                    <Image src="/images/6.png" className="img" alt="Cake" width={1000} height={1000} /> */}
+                    {/* <Image src="/images/5.webp" className="img" alt="Dessert" width={1000} height={1000} />
+                    <Image src="/images/6.webp" className="img" alt="Cake" width={1000} height={1000} /> */}
                 </div>
             </div>
             <ModalImage
-                small={'/images/2.png'}
-                large={'/images/2.png'}
+                small={'/images/2.webp'}
+                large={'/images/2.webp'}
                 alt="Image!"
             />
-            {/* <Image src="/images/2.png" className="img" alt="Drinks" width={1000} height={1000} /> */}
+            {/* <Image src="/images/2.webp" className="img" alt="Drinks" width={1000} height={1000} /> */}
         </div>
 
         {/* Mobile grid structure */}
         <div className="grid-container-mobile">
             <div className="grid-container-mobile-inn">
-                {/* <Image src="/images/1.png" className="img" alt="Cupcake" width={1000} height={1000} /> */}
+                {/* <Image src="/images/1.webp" className="img" alt="Cupcake" width={1000} height={1000} /> */}
                 <ModalImage
-                    small={'/images/1.png'}
-                    large={'/images/1.png'}
+                    small={'/images/1.webp'}
+                    large={'/images/1.webp'}
                     alt="Image!"
                     className='w-full'
                 />
                 <div className="grid-container-inner">
-                    {/* <Image src="/images/3.png" className="img" alt="Banquet Hall" width={1000} height={1000} />
-                    <Image src="/images/4.png" className="img" alt="Candy" width={1000} height={1000} /> */}
+                    {/* <Image src="/images/3.webp" className="img" alt="Banquet Hall" width={1000} height={1000} />
+                    <Image src="/images/4.webp" className="img" alt="Candy" width={1000} height={1000} /> */}
                     <ModalImage
-                        small={'/images/3.png'}
-                        large={'/images/3.png'}
+                        small={'/images/3.webp'}
+                        large={'/images/3.webp'}
                         alt="Image!"
                     // className='w-full'
                     />
                     <ModalImage
-                        small={'/images/4.png'}
-                        large={'/images/4.png'}
+                        small={'/images/4.webp'}
+                        large={'/images/4.webp'}
                         alt="Image!"
                     />
                 </div>
             </div>
             <div className="grid-container-mobile-inn">
                 <div className="grid-container-inner">
-                    {/* <Image src="/images/5.png" className="img" alt="Dessert" width={1000} height={1000} />
-                    <Image src="/images/6.png" className="img" alt="Cake" width={1000} height={1000} /> */}
+                    {/* <Image src="/images/5.webp" className="img" alt="Dessert" width={1000} height={1000} />
+                    <Image src="/images/6.webp" className="img" alt="Cake" width={1000} height={1000} /> */}
                     <ModalImage
-                        small={'/images/5.png'}
-                        large={'/images/5.png'}
+                        small={'/images/5.webp'}
+                        large={'/images/5.webp'}
                         alt="Image!"
                     />
                     <ModalImage
-                        small={'/images/6.png'}
-                        large={'/images/6.png'}
+                        small={'/images/6.webp'}
+                        large={'/images/6.webp'}
                         alt="Image!"
                     // className='w-full'
                     />
                 </div>
-                {/* <Image src="/images/2.png" className="img" alt="Drinks" width={1000} height={1000} /> */}
+                {/* <Image src="/images/2.webp" className="img" alt="Drinks" width={1000} height={1000} /> */}
                 <ModalImage
-                    small={'/images/2.png'}
-                    large={'/images/2.png'}
+                    small={'/images/2.webp'}
+                    large={'/images/2.webp'}
                     alt="Image!"
                     className='w-full'
                 />

@@ -23,7 +23,7 @@ const ContactUs = () => {
                     <div className="dataInner col-span-2">
                         <span>Address</span>
                         <p>A/33, Shop No.3, Sumangal CHS LTD, Anand Nagar, Dahisar (East). <br /> Mumbai - 400 068. India.</p>
-                        <button className='button btn-golden'>Get Directions</button>
+                        <Link href={'https://maps.app.goo.gl/BAtR4ownd8PPKsqM6'} target='_blank' className='button btn-golden'>Get Directions</Link>
                     </div>
                 </div>
 

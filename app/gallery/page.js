@@ -39,7 +39,7 @@ const page = () => {
                         >
                             <li role="presentation">
                                 <button
-                                    className={`${activeTab === 'image' ? 'imageButton active' : 'imageButton'}`}
+                                    className={`imageButton ${activeTab === 'image' ? 'active' : ''}`}
                                     onClick={() => handleTabClick('image')}
                                     type="button"
                                     role="tab"
@@ -50,7 +50,7 @@ const page = () => {
                             </li>
                             <li role="presentation">
                                 <button
-                                    className={`${activeTab === 'videos' ? 'videoButton active' : 'videoButton'}`}
+                                    className={`videoButton ${activeTab === 'videos' ? 'active' : ''}`}
                                     onClick={() => handleTabClick('videos')}
                                     type="button"
                                     role="tab"
@@ -90,20 +90,20 @@ const page = () => {
                                 >
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/1.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/2.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/1.webp'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/2.webp'} alt='Gallery Images' className='img w-full' width={365} height={222} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/2.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/3.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/2.webp'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/3.webp'} alt='Gallery Images' className='img w-full' width={365} height={222} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/4.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/5.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/4.webp'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/5.webp'} alt='Gallery Images' className='img w-full' width={365} height={222} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>

@@ -267,6 +267,15 @@
         display: none;
     }
 
+    .aboutUsNaub::before,
+    .aboutUsNaub::after {
+        height: 50px;
+    }
+
+    .aboutUsNaub::before{
+        top: -50px;
+    }
+
     .heroOverlay {
         height: 229px;
     }
