@@ -15,7 +15,7 @@ import { useRouter } from 'next/navigation'
 const page = () => {
     const [activeTab, setActiveTab] = useState('image');
     const router = useRouter()
-    
+
     const handleTabClick = (tab) => {
         setActiveTab(tab);
     };
@@ -34,12 +34,12 @@ const page = () => {
                 <div className="galleryPage">
                     <div className="galleryTabs">
                         <ul
-                            className="flex flex-wrap justify-center"
+                            className="flex flex-wrap relative justify-center"
                             role="tablist"
                         >
                             <li role="presentation">
                                 <button
-                                    className={`${activeTab === 'image' ? 'active' : ''}`}
+                                    className={`${activeTab === 'image' ? 'imageButton active' : 'imageButton'}`}
                                     onClick={() => handleTabClick('image')}
                                     type="button"
                                     role="tab"
@@ -50,7 +50,7 @@ const page = () => {
                             </li>
                             <li role="presentation">
                                 <button
-                                    className={`${activeTab === 'videos' ? 'active' : ''}`}
+                                    className={`${activeTab === 'videos' ? 'videoButton active' : 'videoButton'}`}
                                     onClick={() => handleTabClick('videos')}
                                     type="button"
                                     role="tab"

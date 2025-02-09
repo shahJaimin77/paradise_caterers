@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/postcss": "^4.0.3",
     "formik": "^2.4.6",
     "next": "15.1.6",

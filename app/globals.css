@@ -63,6 +63,7 @@
   color: #fff;
 }
 
+.websiteNavbar.fixed .button:hover,
 .button.btn-maroon:hover,
 .button:hover {
   background: var(--primary-clr);
@@ -88,6 +89,7 @@
 
 .websiteNavbar {
   padding: 30px 70px;
+  position: absolute;
 }
 
 .websiteNavbar.fixed ul li a {
@@ -571,7 +573,7 @@ form textarea {
   cursor: pointer;
   padding: 11px 25px;
   background: transparent;
-  transition: .5s all;
+  transition: .05s all;
   border-radius: 10px;
   display: flex;
   gap: 6px;
@@ -581,7 +583,18 @@ form textarea {
 .galleryTabs ul li button.active {
   background: var(--primary-clr);
   color: #fff;
+  position: relative;
 }
+
+/* .galleryTabs ul li button.active::after {
+  content: "";
+  position: absolute;
+  width: 127px;
+  height: 46px;
+  background: var(--primary-clr);
+  border-radius: 10px;
+  transition: .5s all;
+} */
 
 .galleryTabs ul li button img {
   filter: brightness(1) invert(0);
@@ -589,7 +602,7 @@ form textarea {
 
 .galleryTabs ul li button.active img {
   filter: brightness(1) invert(1);
-  transition: .5s all;
+  transition: .05s all;
 }
 
 .galleryTabs .gallery-tab-content {

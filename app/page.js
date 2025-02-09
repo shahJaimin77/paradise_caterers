@@ -5,9 +5,28 @@ import Navbar from "./component/Navbar";
 import Link from "next/link";
 import Testimonials from "./component/Testimonials";
 import ImageGrid from "./component/ImageGrid";
+import { useEffect } from "react";
+import Lenis from '@studio-freight/lenis';
 
 export default function Home() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: .3,  // Scroll duration
+      easing: (t) => t * (2 - t), // Easing function (ease-in-out)
+      smoothWheel: true, // Enable smooth scrolling
+      smoothTouch: false, // Disable touch scroll smoothing (can be enabled if needed)
+    });
 
+    function animate(time) {
+      lenis.raf(time);
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+
+    return () => {
+      lenis.destroy(); // Cleanup on component unmount
+    };
+  }, []);
   return (
     <>
       <Navbar fixed={true} />

@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 const Navbar = ({ fixed }) => {
     const router = usePathname()
-    console.log(router, 'router')
+    // console.log(router, 'router')
     // const router = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
