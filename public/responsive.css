@@ -272,12 +272,24 @@
         height: 50px;
     }
 
-    .aboutUsNaub::before{
+    .aboutUsNaub::before {
         top: -50px;
     }
 
     .heroOverlay {
         height: 229px;
+    }
+
+    #navbar-sticky.notactive {
+        opacity: 0;
+        height: 0;
+        transition: .5s all;
+    }
+
+    #navbar-sticky.active {
+        opacity: 1;
+        transition: .5s all;
+        height: 110px;
     }
 
     .aboutUsNaub {

@@ -798,14 +798,3 @@ form textarea {
   align-items: center;
 }
 
-#navbar-sticky.notactive {
-  opacity: 0;
-  height: 0;
-  transition: .5s all;
-}
-
-#navbar-sticky.active {
-  opacity: 1;
-  transition: .5s all;
-  height: 110px;
-}
