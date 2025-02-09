@@ -156,50 +156,50 @@ const page = () => {
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
                                             <video controls>
-                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                                <source src="/videos/v1.webm" type="video/mp4" />
                                             </video>
                                             <video controls>
-                                                <source src="/videos/v2.mp4" type="video/mp4" />
-                                            </video>
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div className="imgVidGrp grid gap-[17px]">
-                                            <video controls>
-                                                <source src="/videos/v2.mp4" type="video/mp4" />
-                                            </video>
-                                            <video controls>
-                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                                <source src="/videos/v2.webm" type="video/mp4" />
                                             </video>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
                                             <video controls>
-                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                                <source src="/videos/v2.webm" type="video/mp4" />
                                             </video>
                                             <video controls>
-                                                <source src="/videos/v2.mp4" type="video/mp4" />
-                                            </video>
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div className="imgVidGrp grid gap-[17px]">
-                                            <video controls>
-                                                <source src="/videos/v2.mp4" type="video/mp4" />
-                                            </video>
-                                            <video controls>
-                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                                <source src="/videos/v1.webm" type="video/mp4" />
                                             </video>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
                                             <video controls>
-                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                                <source src="/videos/v1.webm" type="video/mp4" />
                                             </video>
                                             <video controls>
-                                                <source src="/videos/v2.mp4" type="video/mp4" />
+                                                <source src="/videos/v2.webm" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className="imgVidGrp grid gap-[17px]">
+                                            <video controls>
+                                                <source src="/videos/v2.webm" type="video/mp4" />
+                                            </video>
+                                            <video controls>
+                                                <source src="/videos/v1.webm" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className="imgVidGrp grid gap-[17px]">
+                                            <video controls>
+                                                <source src="/videos/v1.webm" type="video/mp4" />
+                                            </video>
+                                            <video controls>
+                                                <source src="/videos/v2.webm" type="video/mp4" />
                                             </video>
                                         </div>
                                     </SwiperSlide>
