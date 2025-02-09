@@ -90,20 +90,20 @@ const page = () => {
                                 >
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/1.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/2.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/2.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/3.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/4.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <Image src={'/images/5.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
@@ -155,32 +155,52 @@ const page = () => {
                                 >
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <video controls>
+                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                            </video>
+                                            <video controls>
+                                                <source src="/videos/v2.mp4" type="video/mp4" />
+                                            </video>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <video controls>
+                                                <source src="/videos/v2.mp4" type="video/mp4" />
+                                            </video>
+                                            <video controls>
+                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                            </video>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <video controls>
+                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                            </video>
+                                            <video controls>
+                                                <source src="/videos/v2.mp4" type="video/mp4" />
+                                            </video>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <video controls>
+                                                <source src="/videos/v2.mp4" type="video/mp4" />
+                                            </video>
+                                            <video controls>
+                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                            </video>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="imgVidGrp grid gap-[17px]">
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
-                                            <Image src={'/images/place.png'} alt='Gallery Images' className='img w-full' width={365} height={222} />
+                                            <video controls>
+                                                <source src="/videos/v1.mp4" type="video/mp4" />
+                                            </video>
+                                            <video controls>
+                                                <source src="/videos/v2.mp4" type="video/mp4" />
+                                            </video>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>

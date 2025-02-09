@@ -403,7 +403,7 @@
         z-index: 20;
     }
 
-    .websiteNavbar.fixed ul li a,
+    .websiteNavbar.absolute ul li a,
     .websiteNavbar ul li a {
         color: #000000;
         padding: 10px 20px;

@@ -12,6 +12,7 @@
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/postcss": "^4.0.3",
     "formik": "^2.4.6",
+    "gsap": "^3.12.7",
     "next": "15.1.6",
     "postcss": "^8.5.1",
     "react": "^19.0.0",

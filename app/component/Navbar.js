@@ -14,7 +14,7 @@ const Navbar = ({ fixed }) => {
         setIsMenuOpen(!isMenuOpen);
     };
     return (
-        <nav className={`websiteNavbar bg-transparent ${fixed === true && 'fixed'} w-full z-20 top-0 start-0`}>
+        <nav className={`websiteNavbar bg-transparent ${fixed === true && 'absolute'} w-full z-20 top-0 start-0`}>
             <div className="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="/" className="">
                     <Image src={'/images/logo.svg'} alt='Logo' className='img' width={29} height={40} />

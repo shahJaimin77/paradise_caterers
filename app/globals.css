@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @import '../public/reset.css';
-
 
 @font-face {
   font-family: Gilroy-Light;
@@ -39,6 +38,21 @@
   --golden-clr: #DDB53C;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-clr);
+}
+
 .button {
   font-family: Gilroy-Medium;
   display: inline-block;
@@ -50,6 +64,7 @@
   border-radius: 4px;
   outline: none;
   transition: .4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
 }
 
 .button.btn-golden {
@@ -63,7 +78,7 @@
   color: #fff;
 }
 
-.websiteNavbar.fixed .button:hover,
+.websiteNavbar.absolute .button:hover,
 .button.btn-maroon:hover,
 .button:hover {
   background: var(--primary-clr);
@@ -89,10 +104,10 @@
 
 .websiteNavbar {
   padding: 30px 70px;
-  position: absolute;
+  /* position: absolute; */
 }
 
-.websiteNavbar.fixed ul li a {
+.websiteNavbar.absolute ul li a {
   color: #fff;
 }
 
@@ -114,7 +129,7 @@
   color: #DDB53C;
 }
 
-.websiteNavbar.fixed .button {
+.websiteNavbar.absolute .button {
   color: #fff;
   border: 1px solid #fff;
 }
@@ -317,8 +332,17 @@ footer .contactUsBg {
     margin: 0 !important;
   }
 
+  .swiper-pagination-bullet:first-child {
+    border-radius: 12px 0 0 12px;
+  }
+
+  .swiper-pagination-bullet:last-child {
+    border-radius: 0 12px 12px 0;
+  }
+
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: var(--primary-clr);
+    border-radius: 12px;
   }
 
   .swiper-button-prev:after,
@@ -379,6 +403,12 @@ footer .contactUsBg {
 /* Testimonials Css */
 
 /* Banner Css */
+
+.pageBanner {
+  /* transform: scaleY(1.4); */
+  /* transform: scaleY(1.5) scaleX(1.085); */
+}
+
 .pageBannerPadding {
   padding: 0 60px 0;
 }
@@ -386,6 +416,7 @@ footer .contactUsBg {
 .pageBanner img {
   height: 478px;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .pageBanner .pageBannerInfo {
@@ -671,6 +702,13 @@ form textarea {
 /* Contact Us */
 
 
+
+.imgVidGrp video,
+.imgVidGrp img {
+  height: 222.57px;
+  border-radius: 10px;
+  object-fit: cover;
+}
 
 .grid-container {
   display: grid;
