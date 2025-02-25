@@ -7,6 +7,7 @@ import Testimonials from "./component/Testimonials";
 import ImageGrid from "./component/ImageGrid";
 import { useEffect } from "react";
 import Lenis from '@studio-freight/lenis';
+import axios from "axios";
 
 export default function Home() {
   useEffect(() => {
@@ -27,6 +28,16 @@ export default function Home() {
       lenis.destroy(); // Cleanup on component unmount
     };
   }, []);
+
+  useEffect(() => {
+    let data = {
+      names: 'sunny'
+    }
+    axios.post('/api/upload', data = { data }).then((res) => {
+      console.log(res)
+    })
+  }, [])
+
   return (
     <>
       <Navbar fixed={true} />
