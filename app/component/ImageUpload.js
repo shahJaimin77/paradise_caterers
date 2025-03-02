@@ -41,10 +41,10 @@ export default function ImageUpload() {
     };
 
     const onUpload = async () => {
-        console.log(images, 'images')
+        console.log(images, 'images');
         const formData = new FormData();
 
-        // Add banner images to formData
+        // Add all images and videos to formData
         images.venueBanner.forEach((image) => {
             formData.append('venueBanner', image.file);
         });
@@ -55,37 +55,34 @@ export default function ImageUpload() {
             formData.append('contactBanner', image.file);
         });
 
-        // Add venue images to formData
         images.venueImages.forEach((image) => {
             formData.append('venueImages', image.file);
         });
-
-        // Add gallery images to formData
         images.galleryImages.forEach((image) => {
             formData.append('galleryImages', image.file);
         });
-
-        // Add gallery videos to formData
         images.galleryVideos.forEach((video) => {
             formData.append('galleryVideos', video.file);
         });
 
         try {
-            const response = await axios.post('/api/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
+            const response = await fetch('/api/upload', {
+                method: 'POST',
+                body: formData,
             });
 
-            if (response.status === 200) {
-                alert('Upload successful!');
+            if (response.ok) {
+                const result = await response.json();
+                alert(`Upload successful! File URL: ${result.uploadUrl}`);
             } else {
                 alert('Upload failed!');
             }
         } catch (error) {
             console.error('Error uploading files:', error);
+            alert('Upload failed!');
         }
     };
+
 
     return (
         <>
