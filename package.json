@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
-    "@supabase/supabase-js": "^2.49.1",
     "@tailwindcss/postcss": "^4.0.3",
     "@vercel/blob": "^0.27.1",
     "axios": "^1.7.9",

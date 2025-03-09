@@ -12,11 +12,15 @@ export default function ImageUpload() {
         galleryVideos: []  // Gallery Videos section
     });
 
-    const onChangeBanner = (imageList, banner) => {
-        setImages((prevImages) => ({
-            ...prevImages,
-            [banner]: imageList
+    const [mediaList, setMediaList] = useState([]); // New state to store all uploaded media
+
+    // Function to handle the change in images
+    const onChangeBanner = (imageList, bannerType) => {
+        setImages((prevState) => ({
+            ...prevState,
+            [bannerType]: imageList
         }));
+        updateMediaList(imageList, bannerType);
     };
 
     const onChangeVenueImages = (imageList) => {
@@ -24,6 +28,7 @@ export default function ImageUpload() {
             ...prevState,
             venueImages: imageList
         }));
+        updateMediaList(imageList, "venueImage");
     };
 
     const onChangeGalleryImages = (imageList) => {
@@ -31,58 +36,77 @@ export default function ImageUpload() {
             ...prevState,
             galleryImages: imageList
         }));
+        updateMediaList(imageList, "galleryImage");
     };
 
-    const onChangeGalleryVideos = (videoList) => {
-        setImages((prevState) => ({
-            ...prevState,
-            galleryVideos: videoList
+    const updateMediaList = (imageList, mediaType) => {
+        const newMediaList = imageList.map((image) => ({
+            type: mediaType,
+            data_url: image.data_url,
+            isHomepage: false // Default to not shown on homepage
         }));
+
+        setMediaList((prevList) => [...prevList, ...newMediaList]);
+    };
+
+    // Handle video upload
+    const handleVideoUpload = () => {
+        const input = document.createElement("input");
+        input.type = "file";
+        input.accept = "video/*";
+        input.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const newVideo = {
+                    file,
+                    data_url: URL.createObjectURL(file),
+                    type: "galleryVideo",
+                    isHomepage: false // Default to not shown on homepage
+                };
+
+                setImages((prevState) => ({
+                    ...prevState,
+                    galleryVideos: [...prevState.galleryVideos, newVideo]
+                }));
+                setMediaList((prevState) => [...prevState, newVideo]);
+            }
+        };
+        input.click();
+    };
+
+    // Handle checkbox change to mark media for homepage
+    const handleCheckboxChange = (index) => {
+        const updatedMediaList = [...mediaList];
+        updatedMediaList[index].isHomepage = !updatedMediaList[index].isHomepage;
+        setMediaList(updatedMediaList);
     };
 
     const onUpload = async () => {
-        console.log(images, 'images');
-        const formData = new FormData();
+        console.log("Uploaded Media List:", mediaList);
+        // You can make an axios POST request here to upload the media if needed
+        // axios.post('/upload', mediaList);
+        // try {
+        //     // Prepare the media data to send to the backend
+        //     const uploadData = {
+        //         images: mediaList.filter(item => item.type !== 'galleryVideo'), // Filter out the videos
+        //         videos: mediaList.filter(item => item.type === 'galleryVideo')  // Only videos
+        //     };
 
-        // Add all images and videos to formData
-        images.venueBanner.forEach((image) => {
-            formData.append('venueBanner', image.file);
-        });
-        images.galleryBanner.forEach((image) => {
-            formData.append('galleryBanner', image.file);
-        });
-        images.contactBanner.forEach((image) => {
-            formData.append('contactBanner', image.file);
-        });
+        //     console.log("Uploading Media List:", uploadData);
 
-        images.venueImages.forEach((image) => {
-            formData.append('venueImages', image.file);
-        });
-        images.galleryImages.forEach((image) => {
-            formData.append('galleryImages', image.file);
-        });
-        images.galleryVideos.forEach((video) => {
-            formData.append('galleryVideos', video.file);
-        });
+        //     // Send the media data to your API route (e.g., /api/upload-media)
+        //     const response = await axios.post('/api/upload-media', uploadData);
 
-        try {
-            const response = await fetch('/api/upload', {
-                method: 'POST',
-                body: formData,
-            });
-
-            if (response.ok) {
-                const result = await response.json();
-                alert(`Upload successful! File URL: ${result.uploadUrl}`);
-            } else {
-                alert('Upload failed!');
-            }
-        } catch (error) {
-            console.error('Error uploading files:', error);
-            alert('Upload failed!');
-        }
+        //     if (response.status === 200) {
+        //         alert('Media uploaded successfully!');
+        //     } else {
+        //         alert('Failed to upload media');
+        //     }
+        // } catch (error) {
+        //     console.error('Error uploading media:', error);
+        //     alert('An error occurred while uploading media');
+        // }
     };
-
 
     return (
         <>
@@ -163,7 +187,12 @@ export default function ImageUpload() {
                                                     <path fill="#fff" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6zM8 9h8v10H8zm7.5-5l-1-1h-5l-1 1H5v2h14V4z" />
                                                 </svg>
                                             </button>
-                                            <input type="checkbox" value={index} title="Show on Home Screen" />
+                                            <input
+                                                type="checkbox"
+                                                value={index}
+                                                onChange={() => handleCheckboxChange(index)}
+                                                title="Show on Home Screen"
+                                            />
                                         </div>
                                     </div>
                                 ))}
@@ -224,25 +253,7 @@ export default function ImageUpload() {
                     <div className="upload__image-wrapper">
                         <button
                             className="uploader"
-                            onClick={() => {
-                                const input = document.createElement("input");
-                                input.type = "file";
-                                input.accept = "video/*";
-                                input.onchange = (e) => {
-                                    const file = e.target.files[0];
-                                    if (file) {
-                                        const newVideo = {
-                                            file,
-                                            data_url: URL.createObjectURL(file)
-                                        };
-                                        setImages((prevState) => ({
-                                            ...prevState,
-                                            galleryVideos: [...prevState.galleryVideos, newVideo]
-                                        }));
-                                    }
-                                };
-                                input.click();
-                            }}
+                            onClick={handleVideoUpload}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
                                 <path fillRule="evenodd" fill="#000" d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"></path>
@@ -261,7 +272,7 @@ export default function ImageUpload() {
                                             ...prevState,
                                             galleryVideos: newVideos
                                         }));
-                                    }}>
+                                    }} >
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                             <path fill="#fff" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6zM8 9h8v10H8zm7.5-5l-1-1h-5l-1 1H5v2h14V4z" />
                                         </svg>
