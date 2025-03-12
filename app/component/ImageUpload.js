@@ -13,6 +13,7 @@ export default function ImageUpload() {
     });
 
     const [mediaList, setMediaList] = useState([]); // New state to store all uploaded media
+    const [isUploading, setIsUploading] = useState(false);
 
     // Function to handle the change in images
     const onChangeBanner = (imageList, bannerType) => {
@@ -40,35 +41,60 @@ export default function ImageUpload() {
     };
 
     const updateMediaList = (imageList, mediaType) => {
+        // First remove any existing items of this type to avoid duplicates
+        const filteredList = mediaList.filter(item => 
+            !(item.type === mediaType && imageList.every(img => img.data_url !== item.data_url))
+        );
+        
         const newMediaList = imageList.map((image) => ({
             type: mediaType,
             data_url: image.data_url,
             isHomepage: false // Default to not shown on homepage
         }));
 
-        setMediaList((prevList) => [...prevList, ...newMediaList]);
+        setMediaList([...filteredList, ...newMediaList]);
+    };
+
+    // Convert file to base64
+    const fileToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = (error) => reject(error);
+        });
     };
 
     // Handle video upload
-    const handleVideoUpload = () => {
+    const handleVideoUpload = async () => {
         const input = document.createElement("input");
         input.type = "file";
         input.accept = "video/*";
-        input.onchange = (e) => {
+        input.onchange = async (e) => {
             const file = e.target.files[0];
             if (file) {
-                const newVideo = {
-                    file,
-                    data_url: URL.createObjectURL(file),
-                    type: "galleryVideo",
-                    isHomepage: false // Default to not shown on homepage
-                };
+                try {
+                    // Convert file to base64 for sending to server
+                    const base64Data = await fileToBase64(file);
+                    
+                    const newVideo = {
+                        file,
+                        // Store both the object URL (for preview) and the base64 (for upload)
+                        preview_url: URL.createObjectURL(file),
+                        data_url: base64Data,
+                        type: "galleryVideo",
+                        isHomepage: false // Default to not shown on homepage
+                    };
 
-                setImages((prevState) => ({
-                    ...prevState,
-                    galleryVideos: [...prevState.galleryVideos, newVideo]
-                }));
-                setMediaList((prevState) => [...prevState, newVideo]);
+                    setImages((prevState) => ({
+                        ...prevState,
+                        galleryVideos: [...prevState.galleryVideos, newVideo]
+                    }));
+                    setMediaList((prevState) => [...prevState, newVideo]);
+                } catch (error) {
+                    console.error("Error processing video:", error);
+                    alert("Failed to process video. Please try a smaller video file.");
+                }
             }
         };
         input.click();
@@ -82,30 +108,76 @@ export default function ImageUpload() {
     };
 
     const onUpload = async () => {
-        console.log("Uploaded Media List:", mediaList);
-        // You can make an axios POST request here to upload the media if needed
-        // axios.post('/upload', mediaList);
-        // try {
-        //     // Prepare the media data to send to the backend
-        //     const uploadData = {
-        //         images: mediaList.filter(item => item.type !== 'galleryVideo'), // Filter out the videos
-        //         videos: mediaList.filter(item => item.type === 'galleryVideo')  // Only videos
-        //     };
+        if (mediaList.length === 0) {
+            alert('Please select at least one media file to upload');
+            return;
+        }
 
-        //     console.log("Uploading Media List:", uploadData);
+        setIsUploading(true);
+        
+        try {
+            // Warn about large files before uploading
+            const hasLargeFiles = mediaList.some(item => 
+                item.type === 'galleryVideo' && 
+                item.data_url && 
+                item.data_url.length > 10000000  // Roughly 10MB in base64
+            );
+            
+            if (hasLargeFiles && !confirm("You have some large video files. This might take a while to upload. Continue?")) {
+                setIsUploading(false);
+                return;
+            }
 
-        //     // Send the media data to your API route (e.g., /api/upload-media)
-        //     const response = await axios.post('/api/upload-media', uploadData);
+            // Prepare the media data to send to the backend
+            const uploadData = {
+                images: mediaList.filter(item => item.type !== 'galleryVideo'), // Filter out the videos
+                videos: mediaList.filter(item => item.type === 'galleryVideo')  // Only videos
+            };
 
-        //     if (response.status === 200) {
-        //         alert('Media uploaded successfully!');
-        //     } else {
-        //         alert('Failed to upload media');
-        //     }
-        // } catch (error) {
-        //     console.error('Error uploading media:', error);
-        //     alert('An error occurred while uploading media');
-        // }
+            console.log("Uploading Media List:", uploadData.images.length, "images and", uploadData.videos.length, "videos");
+
+            // Send the media data to your API route
+            const response = await axios.post('/api/upload-media', uploadData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                // Set a longer timeout for video uploads
+                timeout: 300000 // 5 minutes
+            });
+
+            console.log("Upload response:", response.data);
+            alert('Media uploaded successfully!');
+            
+            // Clear the form after successful upload
+            setMediaList([]);
+            setImages({
+                venueBanner: [],
+                galleryBanner: [],
+                contactBanner: [],
+                venueImages: [],
+                galleryImages: [],
+                galleryVideos: []
+            });
+            
+        } catch (error) {
+            console.error('Error uploading media:', error);
+            let errorMessage = 'An error occurred while uploading media';
+            
+            if (error.response) {
+                // Server responded with an error
+                errorMessage += `: ${error.response.data?.error || error.response.statusText || error.message}`;
+            } else if (error.request) {
+                // Request was made but no response
+                errorMessage += ': No response from server. Please check your internet connection.';
+            } else {
+                // Something happened in setting up the request
+                errorMessage += `: ${error.message}`;
+            }
+            
+            alert(errorMessage);
+        } finally {
+            setIsUploading(false);
+        }
     };
 
     return (
@@ -202,7 +274,7 @@ export default function ImageUpload() {
                 </div>
             </div>
 
-            {/* New Gallery Images Section */}
+            {/* Gallery Images Section */}
             <div className="addNeeVenueData my-4">
                 <h2>Gallery Images</h2>
                 <div className="dynamicBannerImage flex gap-2 flex-col items-start justify-start">
@@ -245,11 +317,11 @@ export default function ImageUpload() {
                 </div>
             </div>
 
-            {/* New Gallery Videos Section */}
+            {/* Gallery Videos Section */}
             <div className="addNeeVenueData my-4">
                 <h2>Gallery Videos</h2>
                 <div className="dynamicBannerImage flex gap-2 flex-col items-start justify-start">
-                    <h3>Upload Gallery Videos <br /> <span>Note: You can upload videos separately from images.</span></h3>
+                    <h3>Upload Gallery Videos <br /> <span>Note: Keep videos under 50MB for best results.</span></h3>
                     <div className="upload__image-wrapper">
                         <button
                             className="uploader"
@@ -263,7 +335,7 @@ export default function ImageUpload() {
                         {images.galleryVideos.map((video, index) => (
                             <div key={index} className="video-item relative">
                                 <video width="100" controls>
-                                    <source src={video.data_url} type="video/mp4" />
+                                    <source src={video.preview_url || video.data_url} type="video/mp4" />
                                 </video>
                                 <div className="video-item__btn-wrapper">
                                     <button className="removeImg cursor-pointer bg-[#dc3545] w-full" onClick={() => {
@@ -272,6 +344,12 @@ export default function ImageUpload() {
                                             ...prevState,
                                             galleryVideos: newVideos
                                         }));
+                                        
+                                        // Also remove from mediaList
+                                        const updatedMediaList = mediaList.filter(item => 
+                                            !(item.type === 'galleryVideo' && (item.data_url === video.data_url || item.preview_url === video.preview_url))
+                                        );
+                                        setMediaList(updatedMediaList);
                                     }} >
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                             <path fill="#fff" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6zM8 9h8v10H8zm7.5-5l-1-1h-5l-1 1H5v2h14V4z" />
@@ -284,8 +362,12 @@ export default function ImageUpload() {
                 </div>
             </div>
 
-            <button className="button btn-primary mt-5" onClick={onUpload}>
-                Upload Images & Videos
+            <button 
+                className={`button btn-primary mt-5 ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`} 
+                onClick={onUpload}
+                disabled={isUploading}
+            >
+                {isUploading ? 'Uploading...' : 'Upload Images & Videos'}
             </button>
         </>
     );
