@@ -42,10 +42,10 @@ export default function ImageUpload() {
 
     const updateMediaList = (imageList, mediaType) => {
         // First remove any existing items of this type to avoid duplicates
-        const filteredList = mediaList.filter(item => 
+        const filteredList = mediaList.filter(item =>
             !(item.type === mediaType && imageList.every(img => img.data_url !== item.data_url))
         );
-        
+
         const newMediaList = imageList.map((image) => ({
             type: mediaType,
             data_url: image.data_url,
@@ -76,7 +76,7 @@ export default function ImageUpload() {
                 try {
                     // Convert file to base64 for sending to server
                     const base64Data = await fileToBase64(file);
-                    
+
                     const newVideo = {
                         file,
                         // Store both the object URL (for preview) and the base64 (for upload)
@@ -114,15 +114,15 @@ export default function ImageUpload() {
         }
 
         setIsUploading(true);
-        
+
         try {
             // Warn about large files before uploading
-            const hasLargeFiles = mediaList.some(item => 
-                item.type === 'galleryVideo' && 
-                item.data_url && 
+            const hasLargeFiles = mediaList.some(item =>
+                item.type === 'galleryVideo' &&
+                item.data_url &&
                 item.data_url.length > 10000000  // Roughly 10MB in base64
             );
-            
+
             if (hasLargeFiles && !confirm("You have some large video files. This might take a while to upload. Continue?")) {
                 setIsUploading(false);
                 return;
@@ -147,7 +147,7 @@ export default function ImageUpload() {
 
             console.log("Upload response:", response.data);
             alert('Media uploaded successfully!');
-            
+
             // Clear the form after successful upload
             setMediaList([]);
             setImages({
@@ -158,11 +158,11 @@ export default function ImageUpload() {
                 galleryImages: [],
                 galleryVideos: []
             });
-            
+
         } catch (error) {
             console.error('Error uploading media:', error);
             let errorMessage = 'An error occurred while uploading media';
-            
+
             if (error.response) {
                 // Server responded with an error
                 errorMessage += `: ${error.response.data?.error || error.response.statusText || error.message}`;
@@ -173,7 +173,7 @@ export default function ImageUpload() {
                 // Something happened in setting up the request
                 errorMessage += `: ${error.message}`;
             }
-            
+
             alert(errorMessage);
         } finally {
             setIsUploading(false);
@@ -223,6 +223,7 @@ export default function ImageUpload() {
                             </ImageUploading>
                         </div>
                     ))}
+                    <button className="button btn-primary mt-5">Upload Banner Images</button>
                 </div>
             </div>
 
@@ -272,6 +273,7 @@ export default function ImageUpload() {
                         )}
                     </ImageUploading>
                 </div>
+                <button className="button btn-primary mt-5">Upload Venue Images</button>
             </div>
 
             {/* Gallery Images Section */}
@@ -315,6 +317,7 @@ export default function ImageUpload() {
                         )}
                     </ImageUploading>
                 </div>
+                <button className="button btn-primary mt-5">Upload Gallery Images</button>
             </div>
 
             {/* Gallery Videos Section */}
@@ -344,9 +347,9 @@ export default function ImageUpload() {
                                             ...prevState,
                                             galleryVideos: newVideos
                                         }));
-                                        
+
                                         // Also remove from mediaList
-                                        const updatedMediaList = mediaList.filter(item => 
+                                        const updatedMediaList = mediaList.filter(item =>
                                             !(item.type === 'galleryVideo' && (item.data_url === video.data_url || item.preview_url === video.preview_url))
                                         );
                                         setMediaList(updatedMediaList);
@@ -360,10 +363,11 @@ export default function ImageUpload() {
                         ))}
                     </div>
                 </div>
+                <button className="button btn-primary mt-5">Upload Gallery Images</button>
             </div>
 
-            <button 
-                className={`button btn-primary mt-5 ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`} 
+            <button
+                className={`button btn-primary mt-5 ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`}
                 onClick={onUpload}
                 disabled={isUploading}
             >
